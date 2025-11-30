@@ -1,7 +1,7 @@
 package dev.spring.springtransaction.service;
 
 import dev.spring.springtransaction.model.Product;
-import dev.spring.springtransaction.repository.ProductRepository;
+import dev.spring.springtransaction.repository.ProductJpaRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,9 +9,10 @@ import java.util.List;
 @Service
 public class ProductService {
 
-  private final ProductRepository productRepository;
+  //  private final ProductRepository productRepository;
+  private final ProductJpaRepository productRepository;
 
-  public ProductService(ProductRepository productRepository) {
+  public ProductService(ProductJpaRepository productRepository) {
     this.productRepository = productRepository;
   }
 
@@ -20,7 +21,7 @@ public class ProductService {
   }
 
   public List<Product> getAllProducts() {
-    return productRepository.findAllProducts();
+    return productRepository.findAll();
   }
 
 
