@@ -3,7 +3,7 @@ package dev.spring.springtransaction.service;
 import dev.spring.springtransaction.model.Order;
 import dev.spring.springtransaction.model.Product;
 import dev.spring.springtransaction.repository.OrderRepository;
-import dev.spring.springtransaction.repository.ProductRepository;
+import dev.spring.springtransaction.repository.ProductJpaRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -13,9 +13,10 @@ import java.util.List;
 public class OrderService {
 
   private final OrderRepository orderRepository;
-  private final ProductRepository productRepository;
+  //  private final ProductRepository productRepository;
+  private final ProductJpaRepository productRepository;
 
-  public OrderService(OrderRepository orderRepository, ProductRepository productRepository) {
+  public OrderService(OrderRepository orderRepository, ProductJpaRepository productRepository) {
     this.orderRepository = orderRepository;
     this.productRepository = productRepository;
   }
